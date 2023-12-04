@@ -1,0 +1,5 @@
+black==23.11.0
+jupyter==1.0.0
+matplotlib==3.8.2
+torch==2.1.1
+torchvision==0.16.1
