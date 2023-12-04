@@ -11,6 +11,6 @@ time.sleep(1)
 
 while True:
     im = cam.switch_mode_and_capture_image(config, "main")
-    y = rabbit_inference(im)
+    y = rabbit_inference.predict(im)
     print(y)
     time.sleep(0.5)
