@@ -1,5 +1,4 @@
 import time
-import torch
 from picamera2 import Picamera2
 from inference import RabbitInference
 
@@ -10,9 +9,8 @@ config = cam.create_still_configuration()
 cam.start()
 time.sleep(1)
 
-with torch.no_grad():
-    while True:
-        im = cam.switch_mode_and_capture_image(config, "main")
-        y = rabbit_inference.predict(im)
-        print(y)
-        time.sleep(0.5)
+while True:
+    im = cam.switch_mode_and_capture_image(config, "main")
+    y = rabbit_inference.predict(im)
+    print(y)
+    time.sleep(0.5)

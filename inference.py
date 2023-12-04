@@ -22,5 +22,6 @@ class RabbitInference:
 
     def predict(self, x):
         x = self.preprocess(x).unsqueeze(dim=0).to(DEVICE)
-        y = F.sigmoid(self.model(x)).item()
+        with torch.no_grad():
+            y = F.sigmoid(self.model(x)).item()
         return y
